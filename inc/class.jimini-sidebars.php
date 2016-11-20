@@ -168,7 +168,7 @@ class JiminiSidebars {
 	static function sidebar_toggle_bottom() {
 		if ( self::active_widgets() ) { ?>
 			<div class="sidebar-toggle-tab bottom">
-				<a class="toggle-clicker" href="#"><span class="dashicons dashicons-download"></span></a>
+				<a class="toggle-clicker"><span class="dashicons dashicons-download"></span></a>
 			</div><!-- sidebar-toggle-tab -->
 		<?php }
 	}

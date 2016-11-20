@@ -33,7 +33,9 @@
 jQuery(document).ready(function ($) {
 	/** Note: $() will work as an alias for jQuery() inside of this function */
 
-	/** Change HTML element container classes as needed to toggle sidebar */
+	/**
+	 * Change HTML element container classes as needed to toggle sidebar.
+	 */
 	$('a.toggle-clicker').click(function () {
 		$('.with-left-sidebar').toggleClass('no-left-sidebar');
 		$('.content-and-sidebar').toggleClass('content-only');
@@ -41,12 +43,17 @@ jQuery(document).ready(function ($) {
 		$('.sidebar-toggle-tab').toggleClass('content-only');
 	});
 
-	/** Scroll down to display bottom sidebar toggle */
+	/**
+	 * Scroll down to display bottom sidebar toggle.
+	 */
 	$(window).scroll(function () {
 		// If page is scrolled more than 50px.
 		if ($(this).scrollTop() >= 50) {
-			// Make icon visible and fade in.
-			$('.sidebar-toggle-tab.bottom > a').css('visibility','visible').fadeIn(200);
+			// Make icon visible, change the cursor to the pointer, and fade in.
+			$('.sidebar-toggle-tab.bottom > a').css({
+				'visibility': 'visible',
+				'cursor'    : 'pointer'
+			}).fadeIn(200);
 		} else {
 			// Else fade out the toggle icon.
 			$('.sidebar-toggle-tab.bottom > a').fadeOut(200);

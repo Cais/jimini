@@ -127,4 +127,8 @@
 	visibility: hidden;
 }
 
+.sidebar-toggle-tab.bottom.content-only > a {
+	left: 0; /* Required for Safari */
+}
+
 /** End: Sidebar toggle open and closed ------------------------------------- */
