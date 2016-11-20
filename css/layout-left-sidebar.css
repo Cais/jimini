@@ -93,11 +93,11 @@
 }
 
 .sidebar-toggle-tab .dashicons-download {
-	 text-decoration: none;
-	 -ms-transform: rotate(90deg); /* IE 9 */
-	 -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-	 transform: rotate(90deg);
- }
+	text-decoration: none;
+	-ms-transform: rotate(90deg); /* IE 9 */
+	-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+	transform: rotate(90deg);
+}
 
 .sidebar-toggle-tab.content-only .dashicons-download {
 	-ms-transform: rotate(270deg); /* IE 9 */
@@ -119,6 +119,11 @@
 
 .with-left-sidebar .content-without-sidebar.content-only {
 	margin: 0 15px; /* left margin value = content-without-sidebar(left:315px) less content-and-sidebar(left:300px) */
+}
+
+div.sidebar-toggle-tab.bottom > a {
+	position: fixed;
+	bottom: 20px;
 }
 
 /** End: Sidebar toggle open and closed ------------------------------------- */

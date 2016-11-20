@@ -39,5 +39,17 @@ jQuery(document).ready(function ($) {
 		$('.content-and-sidebar').toggleClass('content-only');
 		$('.content-without-sidebar').toggleClass('content-only');
 		$('.sidebar-toggle-tab').toggleClass('content-only');
-	})
+	});
+
+	/** Scroll down to display bottom sidebar toggle */
+	$(window).scroll(function () {
+		// If page is scrolled more than 50px.
+		if ($(this).scrollTop() >= 50) {
+			// Fade in the toggle icon.
+			$('div.sidebar-toggle-tab.bottom > a').fadeIn(200);
+		} else {
+			// Else fade out the toggle icon.
+			$('div.sidebar-toggle-tab.bottom > a').fadeOut(200);
+		}
+	});
 });

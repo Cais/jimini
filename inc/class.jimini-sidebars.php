@@ -70,6 +70,12 @@ class JiminiSidebars {
 
 	/**
 	 * Init
+	 *
+	 * @package Jimini
+	 * @since   0.1
+	 *
+	 * @see     add_filter()
+	 * @see     add_action()
 	 */
 	function init() {
 
@@ -86,7 +92,7 @@ class JiminiSidebars {
 		) );
 		add_action( 'jimini_content_wrapper_end', array(
 			$this,
-			'sidebar_toggle',
+			'sidebar_toggle_bottom',
 		) );
 	}
 
@@ -94,9 +100,9 @@ class JiminiSidebars {
 	 * Extra Body Classes
 	 *
 	 * @package Jimini
-	 * @since 0.1
+	 * @since   0.1
 	 *
-	 * @see JiminiSidebars::active_widgets()
+	 * @see     JiminiSidebars::active_widgets()
 	 *
 	 * @param array $classes from the current body classes.
 	 *
@@ -114,9 +120,9 @@ class JiminiSidebars {
 	 * Active Widgets
 	 *
 	 * @package Jimini
-	 * @since 0.1
+	 * @since   0.1
 	 *
-	 * @see is_active_sidebar()
+	 * @see     is_active_sidebar()
 	 *
 	 * @return bool true if either of the sidebars are in use, false otherwise.
 	 */
@@ -138,11 +144,30 @@ class JiminiSidebars {
 	 * @package Jimini
 	 * @since   0.1
 	 *
-	 * @see JiminiSidebars::active_widgets()
+	 * @see     JiminiSidebars::active_widgets()
 	 */
 	static function sidebar_toggle() {
 		if ( self::active_widgets() ) { ?>
 			<div class="sidebar-toggle-tab">
+				<a class="toggle-clicker" href="#"><span class="dashicons dashicons-download"></span></a>
+			</div><!-- sidebar-toggle-tab -->
+		<?php }
+	}
+
+	/**
+	 * Sidebar Toggle Bottom
+	 *
+	 * Create an anchor link for the `sidebar-toggle.js` script to use when
+	 * there are active widgets in the sidebar.
+	 *
+	 * @package Jimini
+	 * @since   0.1
+	 *
+	 * @see     JiminiSidebars::active_widgets()
+	 */
+	static function sidebar_toggle_bottom() {
+		if ( self::active_widgets() ) { ?>
+			<div class="sidebar-toggle-tab bottom">
 				<a class="toggle-clicker" href="#"><span class="dashicons dashicons-download"></span></a>
 			</div><!-- sidebar-toggle-tab -->
 		<?php }
