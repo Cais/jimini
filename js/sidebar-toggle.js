@@ -45,11 +45,11 @@ jQuery(document).ready(function ($) {
 	$(window).scroll(function () {
 		// If page is scrolled more than 50px.
 		if ($(this).scrollTop() >= 50) {
-			// Fade in the toggle icon.
-			$('div.sidebar-toggle-tab.bottom > a').fadeIn(200);
+			// Make icon visible and fade in.
+			$('.sidebar-toggle-tab.bottom > a').css('visibility','visible').fadeIn(200);
 		} else {
 			// Else fade out the toggle icon.
-			$('div.sidebar-toggle-tab.bottom > a').fadeOut(200);
+			$('.sidebar-toggle-tab.bottom > a').fadeOut(200);
 		}
 	});
 });

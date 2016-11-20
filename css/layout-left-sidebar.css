@@ -121,9 +121,10 @@
 	margin: 0 15px; /* left margin value = content-without-sidebar(left:315px) less content-and-sidebar(left:300px) */
 }
 
-div.sidebar-toggle-tab.bottom > a {
+.sidebar-toggle-tab.bottom > a {
 	position: fixed;
 	bottom: 20px;
+	visibility: hidden;
 }
 
 /** End: Sidebar toggle open and closed ------------------------------------- */
