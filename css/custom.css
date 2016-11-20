@@ -1,0 +1,842 @@
+/**
+ * Jimini custom stylesheet
+ *
+ * @package Jimini
+ * @version 0.1
+ *
+ * @author Edward Caissie <edward.caissie@gmail.com>
+ * @copyright Copyright 2016, Edward Caissie
+ *
+ * This file is part of Jimini.
+ *
+ * This program is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License version 2, as published by the
+ * Free Software Foundation.
+ *
+ * You may NOT assume that you can use any other version of the GPL.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * this program; if not, write to:
+ *
+ *      Free Software Foundation, Inc.
+ *      51 Franklin St, Fifth Floor
+ *      Boston, MA  02110-1301  USA
+ *
+ * The license for this software can also likely be found here:
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+/** ... miscellaneous stuff ... */
+pre {
+	overflow: auto;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+figure {
+	margin: 0;
+}
+
+.post h2 {
+	margin-bottom: .2em;
+}
+
+div.post > hr {
+	width: calc(100% - 60px);
+}
+
+.left-sidebar-container h2 {
+	margin-bottom: 0.2em;
+}
+
+ol ul,
+ul ol,
+ul ul,
+ol ol {
+	padding-left: 20px;
+}
+
+a .dashicons.dashicons-lock.protected-title-symbol,
+a .dashicons.dashicons-unlock.private-title-symbol {
+	font-size: inherit;
+	vertical-align: baseline;
+}
+
+/** ... end of miscellaneous stuff ... */
+
+/*** --- *** ---------------------------------------------------------------- */
+/*** --- *** -------------------------------------------------------------------
+Table of Contents
+=================
+Legend:
+	Section
+	- Commented element definition
+--------------------------------------------------------------------------------
+Minimum WordPress Style Requirements
+Landing Page Header
+Menu Related Elements
+- Center only the top level menu items
+- Horizontal Drop-down Menu
+- Rounded Corners for Menu
+- WordPress 3.0 Navigation Menu default widget
+- Monster be gone!
+General Images
+- Image Captions
+- Galleries - One to Nine columns
+- Featured Images
+Search
+Posts Pagination
+Posts Meta Display
+Comments
+- Add rounded corners to reply buttons
+- Add rounded corner to comment submit "button"
+- Move the `form-allowed-tags` code box to beneath the notification text
+- Place the "Post Comment" button on the right side of the content
+- Align the "post Comment" button with the comment textarea
+- Do not display the reply button on trackbacks and pingbacks
+- Comment Tabs
+- Add rounded corners for the comment type tabs and the comments panel
+- Comment Form Fields
+- Comments Closed
+Sidebar
+- No active widgets
+
+---- --- *** ---------------------------------------------------------------- */
+
+/** Minimum WordPress Style Requirements ------------------------------------ */
+div.aligncenter, .aligncenter, .center {
+	margin: 0 auto;
+}
+
+.alignleft, .left {
+	float: left;
+	text-align: left;
+}
+
+.alignright, .right {
+	float: right;
+	text-align: right;
+}
+
+img.aligncenter, img.center {
+	clear: both;
+	display: block;
+}
+
+img.alignleft, img.left, .wp-caption.alignleft, .wp-caption.left {
+	display: inline;
+	margin: 0 8px 8px 0;
+}
+
+img.alignright, img.right, .wp-caption.alignright, .wp-caption.right {
+	display: inline;
+	margin: 0 0 8px 8px;
+}
+
+.wp-caption {
+	font-style: italic;
+	max-width: 100%;
+	padding-top: 4px;
+	text-align: center;
+}
+
+.wp-caption img {
+	border: 0 none;
+	margin: 0;
+	padding: 0;
+}
+
+.wp-caption figcaption.wp-caption-text {
+	font-size: 12px;
+	line-height: 16px;
+	margin: 0;
+	padding: 0 4px 5px;
+}
+
+.sticky {
+	/* Required by WordPress - may be defined in another section */
+}
+
+.gallery-caption {
+	/* Required by WordPress - may be defined in another section */
+}
+
+.bypostauthor {
+	/* Required by WordPress - may be defined in another section */
+}
+
+/** End: Minimum WordPress Style Requirements ------------------------------- */
+
+/*** --- *** ---------------------------------------------------------------- */
+
+/** Landing Page Header ----------------------------------------------------- */
+h1#site-title {
+	margin-bottom: 0.2em;
+	margin-left: 15px;
+	margin-top: 0.2em;
+}
+
+h4#site-description {
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+	margin-left: 15px;
+}
+
+header nav {
+	margin-left: 15px;
+}
+
+hr#header-bottom {
+	border-bottom: solid thin;
+	margin-bottom: 0;
+}
+
+/** End: Landing Page Header ------------------------------------------------ */
+
+/*** --- *** ---------------------------------------------------------------- */
+
+/** Menu Related Elements --------------------------------------------------- */
+/** Center only the top level menu items */
+nav > ul.nav-menu > li.page_item > a,
+.nav-menu > li.menu-item > a {
+	text-align: center;
+}
+
+/* === MENU === */
+.page ul.nav-menu {
+	padding-left: 0;
+}
+
+.nav-menu {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	/* Raise above all other elements */
+	z-index: 3;
+}
+
+.nav-menu a, .nav-menu a:hover {
+	border: none;
+	display: block;
+	text-decoration: none;
+}
+
+.nav-menu li {
+	float: left;
+	list-style: none outside none;
+	margin-left: 2px;
+	margin-right: 2px;
+	min-width: 99px;
+	position: relative;
+	white-space: nowrap;
+}
+
+.nav-menu a, .nav-menu a:visited {
+	display: block;
+	font-weight: bold;
+	padding: 8px 12px;
+}
+
+.nav-menu a:hover, .nav-menu a:active {
+	background: #eee;
+	color: #000;
+	text-decoration: none;
+}
+
+/**
+ * Horizontal Drop-down Menu
+ * Strongly influenced by the "Horizontal CSS Drop-Down Menu Module"
+ *
+ * found @link: http://www.lwis.net/
+ * @copyright 2006-2008 Live Web Institute. All Rights Reserved.
+ */
+ul.nav-menu,
+ul.nav-menu li,
+ul.nav-menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.nav-menu {
+	float: left;
+	position: relative;
+	z-index: 3;
+}
+
+ul.nav-menu li {
+	float: left;
+	vertical-align: middle;
+}
+
+ul.nav-menu li.hover,
+ul.nav-menu li:hover {
+	cursor: default;
+	position: relative;
+	z-index: 1;
+}
+
+ul.nav-menu ul {
+	background: #eee;
+	left: 0;
+	position: absolute;
+	top: 100%;
+	visibility: hidden;
+	width: auto;
+	z-index: 1;
+}
+
+ul.nav-menu ul li {
+	float: none;
+}
+
+ul.nav-menu ul ul {
+	left: 99%;
+	margin-top: -1px;
+	top: 1px;
+}
+
+ul.nav-menu li:hover > ul {
+	background: #eee;
+	visibility: visible;
+}
+
+ul.nav-menu ul.sub-menu li,
+ul.nav-menu ul.children li {
+	list-style: none;
+}
+
+/* End: Horizontal CSS Drop-Down Menu Module */
+
+/* Rounded Corners for Menu */
+.nav-menu a, .nav-menu a:visited, .nav-menu a:hover, .nav-menu a:active,
+ul.nav-menu ul.sub-menu li, ul.nav-menu ul.children li, ul.nav-menu ul, ul.nav-menu ul ul {
+	border-radius: 3px;
+}
+
+/* WordPress 3.0 Navigation Menu default widget */
+.widget_nav_menu ul.sub-menu li {
+	background: none;
+	list-style: disc inside none;
+	padding: 0 0 0 15px;
+}
+
+/** Monster be gone! - Special case many level menu in sidebar */
+.widget_nav_menu ul.sub-menu li > ul > li > ul > li > ul > li {
+	background: none;
+	margin-left: -20px;
+}
+
+/** End: Menu Related Elements ---------------------------------------------- */
+
+/*** --- *** ---------------------------------------------------------------- */
+
+/** General Images ---------------------------------------------------------- */
+figure {
+	margin: 0;
+}
+
+.gallery-item img {
+	height: auto;
+}
+
+.image-shadow {
+	-moz-box-shadow: 3px 3px 4px #000;
+	-webkit-box-shadow: 3px 3px 4px #000;
+	box-shadow: 3px 3px 4px #000;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+}
+
+/** Image Captions */
+p + div.wp-caption {
+	clear: both;
+}
+
+.wp-caption {
+	max-width: 100%;
+	/* padding-top: 8px; */
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	line-height: 28px;
+}
+
+.wp-caption.alignleft,
+.wp-caption.left {
+	margin-right: 5px;
+}
+
+.wp-caption.alignright,
+.wp-caption.right {
+	margin-left: 5px;
+}
+
+.wp-caption img {
+	width: 98%;
+}
+
+img {
+	height: auto;
+}
+
+.attachment img {
+	width: 98%;
+}
+
+img.wp-smiley {
+	width: auto;
+}
+
+/** Galleries - One to Nine columns ----------------------------------------- */
+.gallery {
+	clear: both;
+	text-align: center;
+	width: 100%;
+}
+
+.gallery-item img {
+	margin-top: 10px;
+}
+
+.gallery-columns-2,
+.gallery-columns-3,
+.gallery-columns-4,
+.gallery-columns-5,
+.gallery-columns-6,
+.gallery-columns-7,
+.gallery-columns-8,
+.gallery-columns-9 {
+	float: left;
+	width: 100%;
+}
+
+.gallery-columns-2 figure.gallery-item:nth-of-type(2n+1),
+.gallery-columns-3 figure.gallery-item:nth-of-type(3n+1),
+.gallery-columns-4 figure.gallery-item:nth-of-type(4n+1),
+.gallery-columns-5 figure.gallery-item:nth-of-type(5n+1),
+.gallery-columns-6 figure.gallery-item:nth-of-type(6n+1),
+.gallery-columns-7 figure.gallery-item:nth-of-type(7n+1),
+.gallery-columns-8 figure.gallery-item:nth-of-type(8n+1),
+.gallery-columns-9 figure.gallery-item:nth-of-type(9n+1) {
+	clear: left;
+}
+
+.gallery-columns-2 figure.gallery-item,
+.gallery-columns-3 figure.gallery-item,
+.gallery-columns-4 figure.gallery-item,
+.gallery-columns-5 figure.gallery-item,
+.gallery-columns-6 figure.gallery-item,
+.gallery-columns-7 figure.gallery-item,
+.gallery-columns-8 figure.gallery-item,
+.gallery-columns-9 figure.gallery-item {
+	float: left;
+}
+
+.gallery-columns-6 img,
+.gallery-columns-7 img,
+.gallery-columns-8 img,
+.gallery-columns-9 img {
+	width: 90%;
+	height: auto;
+}
+
+.gallery-columns-2 figure.gallery-item {
+	width: 50%;
+}
+
+.gallery-columns-3 figure.gallery-item {
+	width: 33.3%;
+}
+
+.gallery-columns-4 figure.gallery-item {
+	width: 25%;
+}
+
+.gallery-columns-5 figure.gallery-item {
+	width: 20%;
+}
+
+.gallery-columns-6 figure.gallery-item {
+	width: 16.6%;
+}
+
+.gallery-columns-7 figure.gallery-item {
+	width: 14.2%;
+}
+
+.gallery-columns-8 figure.gallery-item {
+	width: 12.5%;
+}
+
+.gallery-columns-9 figure.gallery-item {
+	width: 11.1%;
+}
+
+/** Hide captions on galleries with large column counts */
+.gallery-columns-6 figcaption,
+.gallery-columns-7 figcaption,
+.gallery-columns-8 figcaption,
+.gallery-columns-9 figcaption {
+	display: none;
+}
+
+/** End: Galleries - One to Nine columns ------------------------------------ */
+
+/** Featured Images --------------------------------------------------------- */
+img.portrait-featured-image.wp-post-image,
+img.landscape-featured-image.wp-post-image,
+img.square-featured-image.wp-post-image {
+	/** placeholder */
+}
+
+/** End: Featured Images ---------------------------------------------------- */
+/** End: General Images ----------------------------------------------------- */
+
+/*** --- *** ---------------------------------------------------------------- */
+
+/** Search ------------------------------------------------------------------ */
+input.search-submit {
+	display: none;
+}
+
+input.search-field {
+	width: calc(100% - 30px);
+}
+
+form.searchform,
+form#searchform {
+	margin: 0;
+}
+
+form.searchform label.screen-reader-text,
+form#searchform label.screen-reader-text {
+	display: none;
+	margin: 0;
+}
+
+ul.featured-search-pages {
+	list-style: none;
+}
+
+/** End: Search ------------------------------------------------------------- */
+
+/*** --- *** ---------------------------------------------------------------- */
+
+/** Posts Pagination -------------------------------------------------------- */
+div.pagination.for-posts {
+	text-align: center;
+}
+
+div.pagination.for-posts a {
+	text-decoration: none;
+}
+
+.pagination.for-posts > a > span {
+	vertical-align: text-bottom;
+}
+
+/** End: Posts Pagination --------------------------------------------------- */
+
+/*** --- *** ---------------------------------------------------------------- */
+
+/** Posts Meta Display ------------------------------------------------------ */
+.post-meta-display,
+.comments-link-from-post {
+	border-bottom: solid thin;
+}
+
+.post-meta-display a {
+	text-decoration: none;
+}
+
+.post-meta a {
+	text-decoration: none;
+}
+
+.post-meta,
+.post-meta .dashicons {
+	font-size: smaller;
+}
+
+.post-meta-date,
+.post-meta-author-link,
+.post-meta-categories,
+.post-meta-tags {
+	padding-right: 1em;
+}
+
+.post-meta-tags.no-comments,
+.post-meta-categories.no-comments,
+.page .post-meta-author-link {
+	padding-right: 0;
+}
+
+.page .post-meta-author-link.on-page-with-comments {
+	padding-right: 1em;
+}
+
+/** End: Posts Meta Display ------------------------------------------------- */
+
+/*** --- *** ---------------------------------------------------------------- */
+
+/** Comments ---------------------------------------------------------------- */
+h3#comments,
+h3#pingbacks,
+h3#trackbacks {
+	margin-top: .2em;
+	margin-bottom: .2em;
+}
+
+.comments-link.comments-closed.no-comments {
+	display: none;
+}
+
+.comments-wrapper ul.comments-list,
+.comments-wrapper ul.comments-list li.comment ul.children,
+.comments-wrapper ul.pingbacks-list,
+.comments-wrapper ul.pingbacks-list li.comment ul.children,
+.comments-wrapper ul.trackbacks-list,
+.comments-wrapper ul.trackbacks-list li.comment ul.children {
+	list-style: none outside none;
+}
+
+ul.comments-list,
+ul.pingbacks-list,
+ul.trackbacks-list {
+	margin: 0 0 9px;
+	padding-left: 0;
+}
+
+.pingback.odd,
+.trackback.odd,
+.comment.even {
+	background-color: #eee;
+}
+
+.comment.even blockquote {
+	border-left: 5px solid #666;
+}
+
+.pingback.even,
+.trackback.even,
+.comment.odd {
+	background-color: #f4f4f4;
+}
+
+.comment.odd blockquote {
+	border-left: 5px solid #7c7c7c;
+}
+
+.comment cite:before {
+	content: "";
+}
+
+.comment pre {
+	margin: 0 5px 9px;
+}
+
+p.comment-form-author,
+p.comment-form-email,
+p.comment-form-url {
+	padding-left: 5px;
+}
+
+form#commentform label {
+	display: inline-block;
+	padding: 0 5px;
+}
+
+form#commentform .comment-form-url label {
+	padding-right: 10px;
+}
+
+form#commentform span.required {
+	color: red;
+	font-weight: bold;
+}
+
+p.comment-form-comment {
+	clear: both;
+}
+
+p.comment-form-comment textarea#comment {
+	width: 99.5%;
+}
+
+li.comment:nth-child(1) {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+li.comment:last-child {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+div.comment-content p:last-child {
+	margin-bottom: 0;
+}
+
+/** Add rounded corners to reply buttons */
+a.comment-reply-link button.reply-button {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/** Add rounded corner to comment submit "button" */
+form#commentform input#submit.submit {
+	border-radius: 5px;
+}
+
+/** Move the `form-allowed-tags` code box to beneath the notification text */
+code.form-allowed-tags-code-box {
+	float: left;
+	width: 98%;
+	font-size: 13px;
+	line-height: 28px;
+}
+
+/** Place the "Post Comment" button on the right side of the content */
+form#commentform p.form-submit input#submit {
+	float: right;
+	position: relative;
+	top: 10px;
+}
+
+/** Align the "post Comment" button with the comment textarea */
+p.form-allowed-tags + p.form-submit {
+	margin: 10px;
+	width: 98%;
+}
+
+.comment div.reply {
+	text-align: right;
+}
+
+div.comments-wrapper ul.comments-list li.comment {
+	border-left: solid #d3d3d3 1px;
+}
+
+/** Do not display the reply button on trackbacks and pingbacks */
+.pingback .reply,
+.trackback .reply {
+	display: none;
+}
+
+/** Comment Tabs --- */
+.ui-tabs-hide {
+	display: none;
+}
+
+.ui-tabs-nav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.ui-tabs-nav li {
+	float: left;
+	margin: 0 5px 0 0;
+	padding: 0;
+}
+
+.ui-tabs-nav a {
+	text-decoration: none;
+	display: block;
+	padding: 5px 15px 3px 15px;
+	border: 1px solid #999;
+	border-bottom: none;
+}
+
+.ui-state-default a {
+	background-color: #d3d3d3;
+}
+
+.ui-state-active a {
+	background-color: transparent;
+}
+
+.ui-tabs-panel {
+	clear: left;
+	border: 1px solid #999;
+	padding: 10px 10px 0;
+}
+
+/** Add rounded corners for the comment type tabs and the comments panel */
+.ui-tabs-nav a {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.ui-tabs-panel {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+/** End: Comment Tabs --- */
+
+/** Comment Form Fields --- */
+ul#comment-fields-listed-wrapper {
+	list-style: none;
+}
+
+ul#comment-fields-listed-wrapper li {
+	float: left;
+}
+
+ul#comment-fields-listed-wrapper li label {
+	/** display: none; */
+}
+
+/** End: Comment Form Fields --- */
+
+/** Comments Closed --- */
+.comments-closed-message {
+	font-size: 18px;
+	line-height: 32px;
+}
+
+/** End: Comments ----------------------------------------------------------- */
+
+/*** --- *** ---------------------------------------------------------------- */
+
+/** Sidebar ----------------------------------------------------------------- */
+.left-sidebar-container ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.left-sidebar-container ol ul,
+.left-sidebar-container ul ol,
+.left-sidebar-container ul ul,
+.left-sidebar-container ol ol {
+	padding-left: 20px;
+}
+
+.left-sidebar-container form select {
+	width: 100%;
+}
+
+/** No active widgets --- */
+.no-active-widgets {
+	margin: 0 15px;
+}
+
+/** End: Sidebar ------------------------------------------------------------ */
+
+/*** --- *** ---------------------------------------------------------------- */
