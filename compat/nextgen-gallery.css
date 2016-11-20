@@ -35,7 +35,7 @@
 	padding-bottom: 4px !important;
 }
 
-/** Center Basic Thumbnails and Slideshow */
+/** Center Basic Thumbnails and Slideshow link text */
 .ngg-galleryoverview,
 .slideshowlink {
 	text-align: center !important;
@@ -44,6 +44,11 @@
 .ngg-gallery-thumbnail-box {
 	float: none !important;
 	display: inline-block !important;
+}
+
+/** Center image above caption in NextGEN Legacy captions template */
+.ngg-template-caption .ngg-gallery-thumbnail img {
+	margin: 0 auto !important;
 }
 
 /** Adjust menu z-index 5 higher than (NextGEN Pro) displays */
