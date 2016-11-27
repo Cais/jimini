@@ -234,6 +234,7 @@ add_action( 'wp_enqueue_scripts', 'jimini_no_active_widgets' );
  * Nada
  *
  * A meaningless function to accomplish nothing.
+ * Just a meaningless additional comment.
  *
  * @return null
  */
