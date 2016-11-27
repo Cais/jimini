@@ -229,3 +229,14 @@ function jimini_no_active_widgets() {
 }
 
 add_action( 'wp_enqueue_scripts', 'jimini_no_active_widgets' );
+
+/**
+ * Nada
+ *
+ * A meaningless function to accomplish nothing.
+ *
+ * @return null
+ */
+function jimini_nada() {
+	return null;
+}
