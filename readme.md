@@ -25,7 +25,7 @@ The theme adapts to having no active sidebars by changing from a left-sidebar
 layout to a full-width layout.
 
 = Copyright =
-- Copyright (c) 2016, Edward Caissie
+- Copyright (c) 2017, Edward Caissie
 
 This file is part of Jimini.
 

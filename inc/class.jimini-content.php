@@ -354,5 +354,5 @@ class JiminiContent {
 }
 
 /** Instantiate and initialize the class. */
-$jimini_content = JiminiContent::create_instance();
+$jimini_content = new JiminiContent();
 $jimini_content->init();

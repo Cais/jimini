@@ -178,13 +178,13 @@ class JiminiComments {
 	 * @since    0.1
 	 *
 	 * @see      is_page()
-	 * @see      __()
+	 * @see      esc_html__()
 	 */
 	function comments_form_closed() {
 
 		if ( ! is_page() ) {
 
-			echo '<span class="comments-closed-message">' . __( 'New comments are not being accepted at this time, please feel free to contact the post author directly.', 'jimini' ) . '</span>';
+			echo '<span class="comments-closed-message">' . esc_html__( 'New comments are not being accepted at this time, please feel free to contact the post author directly.', 'jimini' ) . '</span>';
 
 		}
 
@@ -311,9 +311,14 @@ class JiminiComments {
 	 *
 	 * @see     is_single()
 	 * @see     is_archive()
+	 * @see     post_password_required()
+	 * @see     esc_attr()
 	 * @see     JiminiComments::comments_closed_class()
 	 * @see     JiminiComments::has_comments_class()
 	 * @see     comments_popup_link()
+	 * @see     __()
+	 * @see     _x()
+	 * @see     esc_html__()
 	 *
 	 * @return null|string
 	 */
@@ -729,7 +734,15 @@ class JiminiComments {
 	 * @since   0.1
 	 *
 	 * @see     add_action()
+	 * @see     JiminiComments::enqueue_comment_reply()
+	 * @see     JiminiComments::before_comment_form()
+	 * @see     JiminiComments::comments_form_closed()
+	 * @see     JiminiComments::comment_fields_wrapper_start()
+	 * @see     JiminiComments::comment_fields_wrapper_end()
 	 * @see     add_filter()
+	 * @see     JiminiComments::comment_author_class()
+	 * @see     JiminiComments::change_comment_form_required_field_glyph()
+	 * @see     JiminiComments::comment_fields_as_list_items()
 	 */
 	public function init() {
 		/** Add comment actions - enqueue threaded comments */

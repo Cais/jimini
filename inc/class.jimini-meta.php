@@ -109,7 +109,7 @@ class JiminiMeta {
 				$displayed_categories = '<span class="post-meta-categories">' . $categories . '</span>';
 				$output               = $categories_symbol . $displayed_categories;
 
-			} else if ( ! comments_open() && 0 <= get_comments_number() ) {
+			} elseif ( ! comments_open() && 0 <= get_comments_number() ) {
 
 				$displayed_categories = '<span class="post-meta-categories no-comments">' . $categories . '</span>';
 				$output               = $categories_symbol . $displayed_categories;
