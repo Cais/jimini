@@ -5,7 +5,7 @@
  * @version 0.1
  *
  * @author Edward Caissie <edward.caissie@gmail.com>
- * @copyright Copyright 2016, Edward Caissie
+ * @copyright Copyright 2017, Edward Caissie
  *
  * This file is part of Jimini.
  *
@@ -546,6 +546,10 @@ div.pagination.for-posts a {
 
 .pagination.for-posts > a > span {
 	vertical-align: text-bottom;
+}
+
+div.pagination.for-posts-to-posts {
+	margin-top: 5px;
 }
 
 /** End: Posts Pagination --------------------------------------------------- */

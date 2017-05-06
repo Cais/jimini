@@ -6,7 +6,7 @@
  * @since     0.1
  *
  * @author    Edward Caissie <edward.caissie@gmail.com>
- * @copyright Copyright 2016, Edward Caissie
+ * @copyright Copyright 2017, Edward Caissie
  *
  * This file is part of Jimini.
  *
@@ -159,4 +159,82 @@ class JiminiNavigation {
 		</div>
 		<?php
 	}
+
+	/**
+	 * Post to Post Navigation
+	 *
+	 * @package Jimini
+	 * @since   0.1
+	 *
+	 * @see     previous_post_link()
+	 * @see     next_post_link()
+	 */
+	function post_to_post_navigation() {
+
+		$newer_nav_symbol = '<span class="dashicons dashicons-arrow-left-alt2"></span>';
+		$older_nav_symbol = '<span class="dashicons dashicons-arrow-right-alt2"></span>';
+		?>
+
+		<!-- Add some navigation controls between post pages -->
+		<div class="pagination for-posts-to-posts">
+			<hr class="pre-post-link-navigation" />
+			<p class="navigation post-link cf">
+				<span class="right"><?php next_post_link( '%link' . $older_nav_symbol ); ?></span>
+				<span class="left"><?php previous_post_link( $newer_nav_symbol . '%link' ); ?></span>
+			</p>
+		</div><!-- pagination for-posts-to-posts -->
+
+	<?php }
+
+	/**
+	 * Post to Post Navigation via Categories
+	 *
+	 * @package Jimini
+	 * @since   0.1
+	 *
+	 * @see     next_post_link()
+	 * @see     previous_post_link()
+	 */
+	function post_to_post_navigation_via_categories() {
+
+		$newer_nav_symbol   = '<span class="dashicons dashicons-arrow-left-alt2"></span>';
+		$older_nav_symbol   = '<span class="dashicons dashicons-arrow-right-alt2"></span>';
+		?>
+
+		<!-- Add some navigation controls between post pages -->
+		<div class="pagination for-posts-to-posts-via-categories">
+			<hr class="pre-post-link-navigation" />
+			<p class="navigation post-link cf">
+				<span class="right"><?php next_post_link( '%link' . $older_nav_symbol, '%title', 'true', '', 'category' ); ?></span>
+				<span class="left"><?php previous_post_link( $newer_nav_symbol . '%link', '%title', 'true', '', 'category' ); ?></span>
+			</p>
+		</div><!-- pagination for-posts-to-posts-via-categories -->
+
+	<?php }
+
+	/**
+	 * Post to Post Navigation via Tags
+	 *
+	 * @package Jimini
+	 * @since   0.1
+	 *
+	 * @see     next_post_link()
+	 * @see     previous_post_link()
+	 */
+	function post_to_post_navigation_via_tags() {
+
+		$newer_nav_symbol   = '<span class="dashicons dashicons-arrow-left-alt2"></span>';
+		$older_nav_symbol   = '<span class="dashicons dashicons-arrow-right-alt2"></span>';
+		?>
+
+		<!-- Add some navigation controls between post pages -->
+		<div class="pagination for-posts-to-posts-via-tags">
+			<hr class="pre-post-link-navigation" />
+			<p class="navigation post-link cf">
+				<span class="right"><?php next_post_link( '%link' . $older_nav_symbol, '%title', 'true', '', 'post_tag' ); ?></span>
+				<span class="left"><?php previous_post_link( $newer_nav_symbol . '%link', '%title', 'true', '', 'post_tag' ); ?></span>
+			</p>
+		</div><!-- pagination for-posts-to-posts-via-tags -->
+
+	<?php }
 }

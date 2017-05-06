@@ -8,7 +8,7 @@
  * @since     0.1
  *
  * @author    Edward Caissie <edward.caissie@gmail.com>
- * @copyright Copyright 2016, Edward Caissie
+ * @copyright Copyright 2017, Edward Caissie
  *
  * This file is part of Jimini.
  *
@@ -122,8 +122,8 @@ function jimini_scripts_and_styles() {
 	// Create a router instance.
 	$router = JiminiRouter::create_instance();
 
-	// Jimini styles.
-	wp_enqueue_style( 'jimini-style', get_stylesheet_uri(), array(), jimini_version(), 'screen' );
+	// Jimini styles and use "dashicons" as a dependency to not enqueue again.
+	wp_enqueue_style( 'jimini-style', get_stylesheet_uri(), array( 'dashicons' ), jimini_version(), 'screen' );
 	wp_enqueue_style( 'jimini-layout-left-sidebar', $router->path_uri( 'css' ) . 'layout-left-sidebar.css', array(), jimini_version(), 'screen' );
 	wp_enqueue_style( 'jimini-custom', $router->path_uri( 'css' ) . 'custom.css', array(), jimini_version(), 'screen' );
 	// Temporary "work-in-progress" stylesheet.
